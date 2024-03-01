@@ -15,7 +15,13 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/sivajujare@outlook.com/orders"
+					"notebookPath": "/Users/sivajujare@outlook.com/orders",
+					"baseParameters": {
+						"a_filename": {
+							"value": "@pipeline().parameters.pl_filename",
+							"type": "Expression"
+						}
+					}
 				},
 				"linkedServiceName": {
 					"referenceName": "ls_databricks",
@@ -23,6 +29,11 @@
 				}
 			}
 		],
+		"parameters": {
+			"pl_filename": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
