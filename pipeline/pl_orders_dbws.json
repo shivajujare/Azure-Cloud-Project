@@ -23,6 +23,11 @@
 				}
 			}
 		],
+		"parameters": {
+			"pl_filename": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }

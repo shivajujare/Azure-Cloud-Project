@@ -8,6 +8,9 @@
 				"pipelineReference": {
 					"referenceName": "pl_orders_dbws",
 					"type": "PipelineReference"
+				},
+				"parameters": {
+					"pl_filename": "@triggerBody().filename"
 				}
 			}
 		],
