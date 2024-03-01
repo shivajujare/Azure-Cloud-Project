@@ -14,6 +14,9 @@
 		"ls_retailadls218_properties_typeProperties_url": {
 			"value": "https://retailadls218.dfs.core.windows.net/"
 		},
+		"orders_trigger_properties_pl_orders_dbws_parameters_pl_filename": {
+			"value": "@triggerBody().filename"
+		},
 		"orders_trigger_properties_typeProperties_scope": {
 			"value": "/subscriptions/f320e263-75fd-4b5b-906b-369f2ba80f6c/resourceGroups/rg-retail-dev/providers/Microsoft.Storage/storageAccounts/retailadls218"
 		}

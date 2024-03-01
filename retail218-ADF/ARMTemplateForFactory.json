@@ -19,6 +19,10 @@
 			"type": "string",
 			"defaultValue": "https://retailadls218.dfs.core.windows.net/"
 		},
+		"orders_trigger_properties_pl_orders_dbws_parameters_pl_filename": {
+			"type": "string",
+			"defaultValue": "@triggerBody().filename"
+		},
 		"orders_trigger_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/f320e263-75fd-4b5b-906b-369f2ba80f6c/resourceGroups/rg-retail-dev/providers/Microsoft.Storage/storageAccounts/retailadls218"
@@ -47,7 +51,13 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"notebookPath": "/Users/sivajujare@outlook.com/orders"
+							"notebookPath": "/Users/sivajujare@outlook.com/orders",
+							"baseParameters": {
+								"a_filename": {
+									"value": "@pipeline().parameters.pl_filename",
+									"type": "Expression"
+								}
+							}
 						},
 						"linkedServiceName": {
 							"referenceName": "ls_databricks",
@@ -57,6 +67,11 @@
 				],
 				"policy": {
 					"elapsedTimeMetric": {}
+				},
+				"parameters": {
+					"pl_filename": {
+						"type": "string"
+					}
 				},
 				"annotations": []
 			},
@@ -138,12 +153,14 @@
 							"referenceName": "pl_orders_dbws",
 							"type": "PipelineReference"
 						},
-						"parameters": {}
+						"parameters": {
+							"pl_filename": "[parameters('orders_trigger_properties_pl_orders_dbws_parameters_pl_filename')]"
+						}
 					}
 				],
 				"type": "BlobEventsTrigger",
 				"typeProperties": {
-					"blobPathBeginsWith": "/raw/blobs/orders.csv",
+					"blobPathBeginsWith": "/raw/blobs/.csv",
 					"ignoreEmptyBlobs": true,
 					"scope": "[parameters('orders_trigger_properties_typeProperties_scope')]",
 					"events": [
