@@ -13,7 +13,7 @@
 		],
 		"type": "BlobEventsTrigger",
 		"typeProperties": {
-			"blobPathBeginsWith": "/raw/blobs/orders.csv",
+			"blobPathBeginsWith": "/raw/blobs/.csv",
 			"ignoreEmptyBlobs": true,
 			"scope": "/subscriptions/f320e263-75fd-4b5b-906b-369f2ba80f6c/resourceGroups/rg-retail-dev/providers/Microsoft.Storage/storageAccounts/retailadls218",
 			"events": [
