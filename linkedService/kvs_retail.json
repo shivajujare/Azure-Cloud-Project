@@ -1,0 +1,10 @@
+{
+	"name": "kvs_retail",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kvs-retail.vault.azure.net/"
+		}
+	}
+}
