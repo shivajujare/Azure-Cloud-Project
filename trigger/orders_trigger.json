@@ -1,0 +1,24 @@
+{
+	"name": "orders_trigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_orders_dbws",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/raw/blobs/orders.csv",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/f320e263-75fd-4b5b-906b-369f2ba80f6c/resourceGroups/rg-retail-dev/providers/Microsoft.Storage/storageAccounts/retailadls218",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
