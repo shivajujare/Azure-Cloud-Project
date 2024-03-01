@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "retail218-ADF"
+		},
+		"ls_retailadls218_accountKey": {
+			"value": ""
+		},
+		"kvs_retail_properties_typeProperties_baseUrl": {
+			"value": "https://kvs-retail.vault.azure.net/"
+		},
+		"ls_retailadls218_properties_typeProperties_url": {
+			"value": "https://retailadls218.dfs.core.windows.net/"
+		},
+		"orders_trigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/f320e263-75fd-4b5b-906b-369f2ba80f6c/resourceGroups/rg-retail-dev/providers/Microsoft.Storage/storageAccounts/retailadls218"
+		}
+	}
+}
